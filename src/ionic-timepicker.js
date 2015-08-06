@@ -127,9 +127,9 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
                     var totalMin = 0;
 
                     if (scope.time.hours != 12) {
-                      totalMin = (scope.time.hours * 60) + scope.time.minutes;
+                      totalMin = (parseInt(scope.time.hours) * 60) + parseInt(scope.time.minutes);
                     } else {
-                      totalMin = scope.time.minutes;
+                      totalMin = parseInt(scope.time.minutes);
                     }
 
                     if (scope.time.meridian === "AM") {
@@ -175,9 +175,9 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
                     var totalMin = 0;
 
                     if (scope.time.hours != 24) {
-                      totalMin = (scope.time.hours * 60) + scope.time.minutes;
+                      totalMin = (parseInt(scope.time.hours) * 60) + parseInt(scope.time.minutes);
                     } else {
-                      totalMin = scope.time.minutes;
+                      totalMin = parseInt(scope.time.minutes);
                     }
                     scope.etime = totalMin;
                     scope.callback(scope.etime);
