@@ -23,7 +23,7 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
 
           scope.time = {hours: 0, minutes: 0, meridian: ""};
 
-          var objDate = new Date(obj.epochTime * 1000);       // Epoch time in milliseconds.
+          var objDate = new Date(obj.epochTime * 60 * 1000);       // Epoch time in milliseconds.
 
           //Increasing the hours
           scope.increaseHours = function () {
@@ -124,20 +124,20 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
                   onTap: function (e) {
                     scope.loadingContent = true;
 
-                    var totalSec = 0;
+                    var totalMin = 0;
 
                     if (scope.time.hours != 12) {
-                      totalSec = (scope.time.hours * 60 * 60) + (scope.time.minutes * 60);
+                      totalMin = (scope.time.hours * 60) + scope.time.minutes;
                     } else {
-                      totalSec = scope.time.minutes * 60;
+                      totalMin = scope.time.minutes;
                     }
 
                     if (scope.time.meridian === "AM") {
-                      totalSec += 0;
+                      totalMin += 0;
                     } else if (scope.time.meridian === "PM") {
-                      totalSec += 43200;
+                      totalMin += 720;
                     }
-                    scope.etime = totalSec;
+                    scope.etime = totalMin;
                     scope.callback(scope.etime);
                   }
                 }
@@ -172,14 +172,14 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
 
                     scope.loadingContent = true;
 
-                    var totalSec = 0;
+                    var totalMin = 0;
 
                     if (scope.time.hours != 24) {
-                      totalSec = (scope.time.hours * 60 * 60) + (scope.time.minutes * 60);
+                      totalMin = (scope.time.hours * 60) + scope.time.minutes;
                     } else {
-                      totalSec = scope.time.minutes * 60;
+                      totalMin = scope.time.minutes;
                     }
-                    scope.etime = totalSec;
+                    scope.etime = totalMin;
                     scope.callback(scope.etime);
                   }
                 }
