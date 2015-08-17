@@ -69,7 +69,7 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
           scope.increaseMinutes = function () {
             scope.time.minutes = Number(scope.time.minutes);
 
-            if (scope.time.minutes <= (60 - obj.step)) {
+            if (scope.time.minutes < (60 - obj.step)) {
               scope.time.minutes += obj.step;
             } else {
               scope.time.minutes = 0;
