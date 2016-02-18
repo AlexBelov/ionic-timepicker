@@ -115,7 +115,7 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
                 {
                   text: 'Close',
                   onTap: function (e) {
-                    scope.callback(undefined);
+                    scope.callback(undefined, scope.time);
                   }
                 },
                 {
@@ -139,7 +139,7 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
                         totalMin += 720;
                       }
                       scope.etime = totalMin;
-                      scope.callback(scope.etime);
+                      scope.callback(scope.etime, scope.time);
                     }
                   }
                 }
@@ -164,7 +164,7 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
                 {
                   text: 'Close',
                   onTap: function (e) {
-                    scope.callback(undefined);
+                    scope.callback(undefined, scope.time);
                   }
                 },
                 {
@@ -182,7 +182,7 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
                       totalMin = parseInt(scope.time.minutes);
                     }
                     scope.etime = totalMin;
-                    scope.callback(scope.etime);
+                    scope.callback(scope.etime, scope.time);
                   }
                 }
               ]
