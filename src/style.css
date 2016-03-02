@@ -21,3 +21,7 @@
 .overflowShow {
   white-space: normal !important;
 }
+
+.timepicker-icon {
+  margin-left: -8px;
+}
