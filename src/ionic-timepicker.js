@@ -107,6 +107,7 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
 
             //Showing time picker modal for 12 hour format
             $ionicPopup.show({
+              cssClass: 'nuggmd-alert',
               templateUrl: 'time-picker-12-hour.html',
               title: obj.title || '<strong>12-Hour Format</strong>',
               subTitle: '',
@@ -156,6 +157,7 @@ angular.module('ionic-timepicker', ['ionic', 'ionic-timepicker.templates'])
 
             //Showing time picker modal for 24 hour format
             $ionicPopup.show({
+              cssClass: 'nuggmd-alert',
               templateUrl: 'time-picker-24-hour.html',
               title: obj.title || '<strong>24-Hour Format</strong>',
               subTitle: '',
